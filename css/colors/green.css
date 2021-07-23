@@ -27,20 +27,22 @@
 .owl-theme .owl-controls.clickable .owl-page:hover span,
 .tns-nav button.tns-nav-active,
 .sidebar .widget .tagcloud > a:hover {
-    background-color: #007bff !important;
+    background-color: #01a479 !important;
 }
+
 .tns-nav button {
-    background: rgba(0, 123, 255, 0.7);
+    background: rgba(1, 164, 121, 0.7);
 }
 
 .skill-badge {
-    background-color: rgba(0, 123, 254, 0.08);
+    background-color: rgba(1, 164, 121, 0.1);
 }
 
 .btn-soft-primary {
-    background-color: rgba(0, 123, 255, 0.3) !important;
-    border: 1px solid rgba(0, 123, 255, 0.3) !important;
+    background-color: rgba(1, 164, 121, 0.1) !important;
+    border: 1px solid rgba(1, 164, 121, 0.1) !important;
 }
+
 
 .text-primary,
 .btn-outline-primary,
@@ -76,7 +78,7 @@
 .sidebar .widget .catagories li a:hover,
 .sidebar .widget .post-recent .post-recent-content a:hover,
 .comment-area .media-list .media .media-body a:hover {
-    color: #007bff !important;
+    color: #01a479 !important;
 }
 
 .btn-primary,
@@ -96,16 +98,16 @@
 .section-title .titles span:before, 
 .section-title .titles span:after,
 .owl-theme .owl-controls .owl-page span {
-    border-color: #007bff !important;
+    border-color: #01a479 !important;
 }
 
 a.text-primary:hover, 
 a.text-primary:focus {
-    color: #0056b3 !important;
+    color: #017b5b !important;
 }
 
 .work-container.work-modern .overlay-work {
-    background-image: linear-gradient(#007bff 10%, #161c2d);
+    background-image: linear-gradient(#01a479 10%, #161c2d);
 }
 
 .btn-primary,
@@ -115,7 +117,7 @@ a.text-primary:focus {
 .btn-outline-primary.active, 
 .btn-outline-primary.focus, 
 .btn-outline-primary:not(:disabled):not(.disabled):active {
-    box-shadow: 0 3px 5px 0 rgba(45, 132, 251, 0.3);
+    box-shadow: 0 3px 5px 0 rgba(103, 197, 110, 0.3);
 }
 
 .btn-primary:hover, 
@@ -123,6 +125,6 @@ a.text-primary:focus {
 .btn-primary:active, 
 .btn-primary.active, 
 .btn-primary.focus {
-    background-color: #0056b3 !important;
-    border-color: #0056b3 !important;
+    background-color: #017b5b !important;
+    border-color: #017b5b !important;
 }
