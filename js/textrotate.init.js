@@ -3,9 +3,9 @@ var i = 0;
 var text_rotate = [];
 var time = 3500;
 
-text_rotate[0] = "Queue";
-text_rotate[1] = "Developer";
-text_rotate[2] = "Freelancer";
+text_rotate[0] = "Software Engineer";
+text_rotate[1] = "Python Developer";
+text_rotate[2] = "Open Source Dev";
 
 function changeText() {
     if (document.getElementById("target")) {
