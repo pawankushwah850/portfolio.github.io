@@ -23,6 +23,7 @@
     <link href="css/style.css" id="theme-opt" rel="stylesheet" type="text/css"/>
     <link href="css/colors/default.css" id="color-opt" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
     </meta>
 </head>
 <body data-bs-offset="20" data-bs-spy="scroll" data-bs-target="#navbar-navlist" onload="return changeText('target')">
@@ -1274,57 +1275,57 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="custom-form mb-sm-30">
-                    <form action="php/contact.php" method="post" name="myForm" onsubmit="return validateForm()">
-                        <p id="error-msg">
-                        </p>
-                        <div id="simple-msg">
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-6">
-                                        <div class="form-group">
-                                            <input class="form-control border rounded" id="name" name="name"
-                                                   placeholder="First Name :" type="text"/>
-                                        </div>
+                    <!--                    <form action="#" method="post" name="myForm" id="form" onsubmit="SubmitForm()">-->
+                    <p id="error-msg">
+                    </p>
+                    <div id="simple-msg">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control border rounded" id="form-name" name="name"
+                                               placeholder="First Name :" type="text" required/>
                                     </div>
-                                    <!--end col-->
-                                    <div class="col-lg-12 col-md-6">
-                                        <div class="form-group">
-                                            <input class="form-control border rounded" id="email" name="email"
-                                                   placeholder="Your email :" type="email"/>
-                                        </div>
-                                    </div>
-                                    <!--end col-->
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <input class="form-control border rounded" id="subject" name="subject"
-                                                   placeholder="Your subject :"/>
-                                        </div>
-                                    </div>
-                                    <!--end col-->
                                 </div>
-                                <!--end row-->
-                            </div>
-                            <!--end col-->
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                 <textarea class="form-control border rounded" id="comments" name="comments"
-                                           placeholder="Your Message :" rows="4"></textarea>
+                                <!--end col-->
+                                <div class="col-lg-12 col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control border rounded" id="form-email" name="email"
+                                               placeholder="Your email :" type="email" required/>
+                                    </div>
                                 </div>
+                                <!--end col-->
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control border rounded" id="form-subject" name="subject"
+                                               placeholder="Your subject :" required/>
+                                    </div>
+                                </div>
+                                <!--end col-->
                             </div>
-                            <!--end col-->
+                            <!--end row-->
                         </div>
-                        <!--end row-->
-                        <div class="row">
-                            <div class="col-sm-12 text-end">
-                                <input class="submitBnt btn btn btn-primary rounded" id="submit" name="send"
-                                       type="submit" value="Send Message"/>
+                        <!--end col-->
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                 <textarea class="form-control border rounded" id="form-comment" name="comments"
+                                           placeholder="Your Message :" rows="4" required></textarea>
                             </div>
-                            <!--end col-->
                         </div>
-                        <!--end row-->
-                    </form>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                    <div class="row">
+                        <div class="col-sm-12 text-end">
+                            <input class="submitBnt btn btn btn-primary rounded" id="submit" name="send"
+                                   type="submit" value="Send Message" onclick="SubmitForm()"/>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                    <!--                    </form>-->
                     <!--end form-->
                 </div>
                 <!--end custom-form-->
@@ -1471,5 +1472,74 @@
 <script src="js/switcher.js"></script>
 <!-- Main Js -->
 <script src="js/app.js"></script>
+
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>-->
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyBAa7X_tC1G32bvbSoGj-maVGff8YPbSBA",
+        authDomain: "myapp-7d68c.firebaseapp.com",
+        databaseURL: "https://myapp-7d68c-default-rtdb.firebaseio.com",
+        projectId: "myapp-7d68c",
+        storageBucket: "myapp-7d68c.appspot.com",
+        messagingSenderId: "790765302438",
+        appId: "1:790765302438:web:a07b528612fed4ae473a67",
+        measurementId: "G-XZWVDWTHZR"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    // Get a reference to the database service
+    const database = firebase.database();
+
+
+</script>
+
+<script>
+
+    function AlertBox(message, callback) {
+        alert("Successfully submit");
+        callback()
+    }
+
+    function SubmitForm() {
+
+        let name = document.getElementById("form-name").value;
+        let email = document.getElementById("form-email").value;
+        let subject = document.getElementById("form-subject").value;
+        let message = document.getElementById("form-comment").value;
+
+        let userId = Math.round(Math.random() * 1000000000000, 4);
+
+        let path=userId+"_"+name
+        database.ref('users/' +path).set({
+            username: name,
+            email: email,
+            subject: subject,
+            message: message,
+            date : new Date()
+        });
+
+        AlertBox("Successfully Submitted", () => {
+            document.getElementById("form-name").value = "";
+            document.getElementById("form-email").value = "";
+            document.getElementById("form-subject").value = "";
+            document.getElementById("form-comment").value = "";
+        })
+
+    }
+</script>
 </body>
 </html>
