@@ -26,7 +26,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
     </meta>
 </head>
-<body data-bs-offset="20" data-bs-spy="scroll" data-bs-target="#navbar-navlist" onload="return changeText('target')">
+<body data-bs-offset="20" data-bs-spy="scroll" data-bs-target="#navbar-navlist" onload="return changeText('target')"
+      oncopy="return false" onpaste="return false">
 <!-- Loader -->
 <div id="preloader">
     <div id="status">
@@ -236,7 +237,7 @@
                             Awesome Service
                         </h2>
                         <p class="pera-title para-desc-600 text-light-muted mb-0 mx-auto">
-                            Obviously I'm a Web Designer. Experienced with all stages of the development cycle for
+                            Obviously I'm a Web Developer. Experienced with all stages of the development cycle for
                             dynamic web projects.
                         </p>
                         <span>
@@ -256,16 +257,11 @@
                     </div>
                     <div class="services-texts">
                         <h3 class="title mb-3">
-                            Web Developmnet
+                            Web Development & REST Services
                         </h3>
                         <p class="text-light-muted mb-4">
-                            With lots of unique blocks, you can easily build a page without coding.
+                            Web development with Django, REST API, DJ-Channels, CMS and many more.
                         </p>
-                        <a class="text-primary" href="javascript:void(0)">
-                            Read more
-                            <i class="mdi mdi-chevron-right">
-                            </i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -277,16 +273,13 @@
                     </div>
                     <div class="services-texts">
                         <h3 class="title mb-3">
-                            Design &amp; Planning
+                            Software Design &amp; Planning
                         </h3>
                         <p class="text-light-muted mb-4">
-                            With lots of unique blocks, you can easily build a page without coding.
+                            Software Designing before developing is really very important, So you can discuss and
+                            planned
+                            with me of software architecture and system designing.
                         </p>
-                        <a class="text-primary" href="javascript:void(0)">
-                            Read more
-                            <i class="mdi mdi-chevron-right">
-                            </i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -298,16 +291,11 @@
                     </div>
                     <div class="services-texts">
                         <h3 class="title mb-3">
-                            Adobe Photoshop
+                            AWS Services
                         </h3>
                         <p class="text-light-muted mb-4">
-                            With lots of unique blocks, you can easily build a page without coding.
+                            I also provide and help to application deploy in AWS.
                         </p>
-                        <a class="text-primary" href="javascript:void(0)">
-                            Read more
-                            <i class="mdi mdi-chevron-right">
-                            </i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -320,16 +308,11 @@
                     </div>
                     <div class="services-texts">
                         <h3 class="title mb-3">
-                            Digital marketing
+                            Docker
                         </h3>
                         <p class="text-light-muted mb-4">
                             With lots of unique blocks, you can easily build a page without coding.
                         </p>
-                        <a class="text-primary" href="javascript:void(0)">
-                            Read more
-                            <i class="mdi mdi-chevron-right">
-                            </i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -346,11 +329,6 @@
                         <p class="text-light-muted mb-4">
                             With lots of unique blocks, you can easily build a page without coding.
                         </p>
-                        <a class="text-primary" href="javascript:void(0)">
-                            Read more
-                            <i class="mdi mdi-chevron-right">
-                            </i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -367,11 +345,6 @@
                         <p class="text-light-muted mb-4">
                             With lots of unique blocks, you can easily build a page without coding.
                         </p>
-                        <a class="text-primary" href="javascript:void(0)">
-                            Read more
-                            <i class="mdi mdi-chevron-right">
-                            </i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -1506,7 +1479,6 @@
 
 
 </script>
-
 <script>
 
     function AlertBox(message, callback) {
@@ -1523,13 +1495,13 @@
 
         let userId = Math.round(Math.random() * 1000000000000, 4);
 
-        let path=userId+"_"+name
-        database.ref('users/' +path).set({
+        let path = userId + "_" + name
+        database.ref('users/' + path).set({
             username: name,
             email: email,
             subject: subject,
             message: message,
-            date : new Date()
+            date: new Date()
         });
 
         AlertBox("Successfully Submitted", () => {
@@ -1538,7 +1510,6 @@
             document.getElementById("form-subject").value = "";
             document.getElementById("form-comment").value = "";
         })
-
     }
 </script>
 </body>
